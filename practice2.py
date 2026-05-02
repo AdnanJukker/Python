@@ -12,4 +12,4 @@ a = int(input("Enter a number 1: "))
 print("Square of a number is : ", a*a)
 
 a = input("Enter the value of a = ")
-print(type(a))
+print(type(a)) 
