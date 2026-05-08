@@ -1,92 +1,79 @@
-# f = open("poem.txt")
-# c = f.read()
-# if "twinkle" in c:
-#     print("twinkle is present")
-# else:
-#     print("twinkle is not present")    
-# f.close()
-# import random
+# class programmer:
+#     company = "Microsoft"
+#     def __init__(self,name,salary,pin):
+#         self.name = name
+#         self.salary = salary
+#         self.pin = pin
 
-# def game():
-#     print("You are playing the game")
-#     score = random.randint(1, 62)
-#     with open("hiscore.txt") as f:
-#         hiscore = f.read()
-#     if (hiscore != ""):
-#         hiscore = int(hiscore)
-#     else:
-#         hiscore = 0 
+# p = programmer("Adnan",100000,1234)
+# print(p.company)
+# print(p.name,p.salary,p.pin)
 
-#     print(f"Your score is: {score}")
-#     if(score>hiscore):
-#         with open("hiscore.txt", "w") as f:
-#             f.write(str(score))
+# class calaculator:
+#     def __init__(self,num):
+#         self.num = num
 
-#     return score
+#     def square(self):
+#         print("The square of",self.num,"is",self.num * self.num)
 
-# game()
-
-
-# def generateTable(n):
-#     table = ""
-#     for i in range(1, 11):
-#         table += f"{n} x {i} = {n*i}\n"
-#     with open(f"tables/table_{n}.txt", "w") as f:
-#         f.write(table)
-
-# for i in range(2, 21):
-#     generateTable(i) 
-
-# word = "donkey"
-
-# with open("file.txt", "r") as f:
-#     c = f.read()
-
-#     contentNew = c.replace(word, "######")
-# with open("file.txt", "w") as f:
-#     f.write(contentNew)
+#     def cube(self):
+#         print("The cube of",self.num,"is",self.num * self.num * self.num)
+    
+#     def sqrt(self):
+#         print("The square root of",self.num,"is",self.num ** 1/2)
+    
+# a = calaculator(8)
+# a.square()
+# a.cube()
+# a.sqrt()   
 
 
-# word = ["donkey","brainless","gande"]
+# class demo:
+#     a =4
+# o = demo()
+# print(o.a)  #prints class attribute because instance attribute is not defined
+# o.a = 0 #instance attribute is created and assigned value 0, it will override the class attribute
+# print(o.a)    #prints instance attribute because it is defined, it will override the class attribute
+# print(demo.a) #prints class attribute because it is not overridden by instance attribute    
 
-# with open("file.txt", "r") as f:
-#     c = f.read()
+# class calaculator:
+#     def __init__(self,num):
+#         self.num = num
 
-#     for w in word:
-#         c = c.replace(w, "#"*len(w))
+#     def square(self):
+#         print("The square of",self.num,"is",self.num * self.num)
 
-# with open("file.txt", "w") as f:
-#     f.write(c)
+#     def cube(self):
+#         print("The cube of",self.num,"is",self.num * self.num * self.num)
+    
+#     def sqrt(self):
+#         print("The square root of",self.num,"is",self.num ** 1/2)
 
-# with open("log.txt", "r") as f:
-#     c = f.read()
-# if "python" in c:
-#     print("python is present")
-# else:    print("python is not present")
+#     @staticmethod
+#     def hello():
+#         print("Hello, welcome to the calculator!")
+    
+# a = calaculator(8)
+# a.hello()  #static method can be called using instance or class name
+# a.square()
+# a.cube()
+# a.sqrt()  
 
-# with open("log.txt") as f:
-#     lines = f.readlines()
-# lineno = 1
-# for line in lines:
-#     if "python" in line:
-#         print(f"python is present, line number is: {lineno}")
-#         break
-#     lineno += 1
-# else:
-#         print("python is not present")
+import random
 
-# with open("file.txt") as f:
-#     c =f.read()
+class Train:
+    def __init__(self, trainNo):
+        self.trainNo = trainNo
+    def booking(self, frm, to):
+        print(f"Your ticket for train {self.trainNo} from {frm} to {to} has been booked.")
 
-# with open("copy_file.txt", "w") as f:
-#     f.write(c)
+    def getStatus(self):
+        print(f"Train {self.trainNo} is on time.")
 
-with open("file1.txt") as f:
-    c1 = f.read()
-with open("poem.txt") as f:
-    c2 = f.read()
+    def fare(self, frm, to):
+        print(f"The fare for train {self.trainNo} from {frm} to {to} is {random.randint(100, 1000)}.")
 
-if c1 == c2:
-    print("Both files are same")
-else:
-    print("Both files are different")
+t = Train(12345)
+t.booking("Karachi", "Lahore")
+t.getStatus()
+t.fare("Karachi", "Lahore")
